@@ -45,3 +45,9 @@ Explanation:
 Product 0 is available in all three stores with prices 95, 100, and 105 respectively.
 Product 1 is available in store1 with price 70 and store3 with price 80. The product is not available in store2.
 
+# Write your MySQL query statement below
+Select product_id,"store1" store, store1 as price from Products where store1 is not NULL
+union
+Select product_id,"store2" store, store2 as price from Products where store2 is not NULL 
+union
+Select product_id,"store3" store, store3 as price from Products where store3 is not NULL
