@@ -49,3 +49,8 @@ User 6 logged into their account 3 times but only once in 2020, so we include th
 User 8 logged into their account 2 times in 2020, once in February and once in December. We include only the latest one (December) in the result table.
 User 2 logged into their account 2 times but only once in 2020, so we include this login in the result table.
 User 14 did not login in 2020, so we do not include them in the result table.
+
+
+
+# Write your MySQL query statement below
+select distinct user_id, first_value(time_stamp) over(partition by user_id order by time_stamp desc) as last_stamp from Logins where year(time_stamp)='2020'
